@@ -1,0 +1,11 @@
+--- ./fastrtps/src/cpp/rtps/transport/TCPChannelResource.h	2024-06-28 09:49:17.000000000 +0000
++++ ./fastrtps/src/cpp/rtps/transport/TCPChannelResource.h 	2024-06-28 11:04:41.925238220 +0000
+@@ -241,7 +241,7 @@
+      * @param options Descriptor with the options to set.
+      */
+     static void set_socket_options(
+-            asio::basic_socket<asio::ip::tcp>& socket,
++            asio::basic_socket<asio::ip::tcp, asio::stream_socket_service<asio::ip::tcp> >& socket,
+             const TCPTransportDescriptor* options);
+ 
+     TCPConnectionType tcp_connection_type_;
